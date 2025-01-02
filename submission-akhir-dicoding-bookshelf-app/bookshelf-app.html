@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf Apps</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Englebert&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/booskhelf-app.css">
+</head>
+<body>
+    <header>
+        <img src="assets/bookshelf-apps-logo.png" alt="Bookshelf Apps Logo" class="app-logo"/>
+        <h3 class="app-subtitle">Create your own mind</h3>
+    </header>
+
+    <div class="notif-modal-background hidden" id="put-still-reading-modal">
+        <div class="modal-container hidden" id="put-still-reading-content">            
+            <span class= "close-modal" id="close-put-still-reading-modal">&times;</span>
+            <div class="modal-content">
+                <h3>Put Book Alert</h3>
+                <p>Your book has been put on the Still Reading bookshelf successfully</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notif-modal-background hidden" id="put-has-finished-modal">
+        <div class="modal-container hidden" id="put-has-finished-content">            
+            <span class="close-modal" id="close-put-has-finished-modal">&times;</span>
+            <div class="modal-content">
+                <h3>Put Book Alert</h3>
+                <p>Your book has been put on the Have Finished bookshelf successfully</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="delete-modal-background hidden" id="delete-confirm-modal">
+        <div class="modal-container hidden" id="delete-confirm-content">
+            <div class="modal-content">
+                <h3>Delete Confirm</h3>
+                <p>Are you sure want to delete this book?</p>
+                
+                <div class="modal-button-container">
+                    <button id="cancel-button" type="submit">No, keep it here</button>
+                    <button id="delete-confirm-button" type="submit">Yes, delete this book</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="notif-modal-background hidden" id="still-reading-modal">
+        <div class="modal-container hidden" id="still-reading-content">            
+            <span class="close-modal" id="close-still-reading-modal">&times;</span>
+            <div class="modal-content">
+                <h3>Moved Book Alert</h3>
+                <p>Your book has been moved to Still Reading bookshelf. Fight for reading!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notif-modal-background hidden" id="has-finished-modal">
+        <div class="modal-container hidden" id="has-finished-content">
+            <span class="close-modal" id="close-has-finished-modal">&times;</span>
+            <div class="modal-content">
+                <h3>Moved Book Alert</h3>
+                <p>Congrats! You have finished this book well. :)</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="notif-modal-background hidden" id="has-deleted-modal">
+        <div class="modal-container hidden" id="has-deleted-content">
+            <span class="close-modal" id="close-has-deleted-modal">&times;</span>
+            <div class="modal-content">
+                <h3>Deleted Book Alert</h3>
+                <p>Your book has been deleted successfully.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="wrapper">
+        <div class="container" id="add-book">
+            <h2>Hello! What will you read today?</h2>
+            <form id="book-form" class="bookshelf-form">
+                <div class="form-group">
+                    <label for="book-title">Title</label>
+                    <input id="book-title" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-author">Author</label>
+                    <input id="book-author" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="book-year">Year</label>
+                    <input id="book-year" type="number" required>
+                </div>
+
+                <div class="check-form-group">
+                    <label for="book-is-complete">Have finished</label>
+                    <input id="book-is-complete" type="checkbox">
+                </div>
+                
+                <button id="book-submit" type="submit" class="submit-button">Put my book on the shelf</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2>Search your book here</h2>
+            <form id="search-book-title" class="bookshelf-form">
+                <input id="search-book-input" type="text" placeholder="What's your book title?">
+                <button id="search-submit" type="submit" class="submit-button">Search</button>
+            </form>
+        </div>
+
+        <div class="container">
+            <h2>Still reading</h2>
+            
+            <div id="incomplete-bookshelf-list" class="book-list">
+                
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Have finished</h2>
+            
+            <div id="completed-bookshelf-list" class="book-list">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bookshelf-app.js" type="text/javascript"></script>
+</body>
+</html>
